@@ -5,7 +5,7 @@
 def prime? (number)
   #if the number is less then 2 (1, 0, and negatives) then it is false
    if number < 2 == false
-    #return false
+    return false
   else (2..number/2).none? { |i| number % i == 0 }
 end
 end

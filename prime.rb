@@ -4,7 +4,22 @@ require 'bigdecimal/math'
 # calculate pi to 10k digits
 puts Benchmark.measure {BigMath.PI(10_000)}
 
+require 'benchmark'
 
+iterations = 100_000
+Benchmark.bm(27) do |bm|
+  bm.report('joining an array of strings') do
+    iterations.times do
+      ["The", "current", "time", "is", Time.now].join(" ")
+    end
+  end
+
+  bm.report('string interpolation') do
+    iterations.times do
+      "The current time is #{Time.now}"
+    end
+  end
+end
 
 def prime? (number)
   #if the number is less then 2 (1, 0, and negatives) then it is false

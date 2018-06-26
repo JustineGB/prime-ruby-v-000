@@ -1,3 +1,16 @@
+1
+2
+3
+4
+5
+require 'benchmark'
+require 'bigdecimal/math'
+
+# calculate pi to 10k digits
+puts Benchmark.measure {
+
+
+
 def prime? (number)
   #if the number is less then 2 (1, 0, and negatives) then it is false
    if number < 2
